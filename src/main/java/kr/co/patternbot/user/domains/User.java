@@ -2,7 +2,7 @@ package kr.co.patternbot.user.domains;
 
 
 import com.sun.istack.NotNull;
-import kr.co.patternbot.sale.domains.Sale;
+import kr.co.patternbot.invest.domains.Invest;
 import lombok.*;
 
 import javax.persistence.*;
@@ -26,7 +26,7 @@ public class User {
     @Column(name = "reg_date") @NotNull private String regDate;
 
     @OneToMany(mappedBy = "user")
-    List<Sale> a = new ArrayList<>();
+    List<Invest> a = new ArrayList<>();
 
     //EAGER는 등급에 맞는 토큰을 준다고 생각하면 됨
     @ElementCollection(fetch = FetchType.EAGER)
