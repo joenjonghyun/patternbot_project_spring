@@ -1,6 +1,7 @@
 package kr.co.patternbot.trade.domains;
 
 import com.sun.istack.NotNull;
+import kr.co.patternbot.coin.domains.Coin;
 import kr.co.patternbot.user.domains.User;
 import lombok.*;
 
@@ -17,14 +18,14 @@ import javax.persistence.*;
 public class Trade {
     @Id
     @Column(name = "tradeid")
-    @GeneratedValue
-    private long tradeid;
-    @Column private @NotNull String coinName;
-    @Column private String investmentAmount;
+    @GeneratedValue private long tradeid;
+    @Column private String amount;
     @Column private String profitRatio;
     @Column private String lossRatio;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "username")
+    @JoinColumn(name = "userid")
+    @JoinColumn(name = "coinid")
     private User user;
+    private Coin coin;
 }

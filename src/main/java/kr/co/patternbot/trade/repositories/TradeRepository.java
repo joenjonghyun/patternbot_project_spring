@@ -1,4 +1,7 @@
 package kr.co.patternbot.trade.repositories;
 
-public interface TradeRepository {
+import kr.co.patternbot.trade.domains.Trade;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface TradeRepository extends JpaRepository<Trade, Long> {
 }

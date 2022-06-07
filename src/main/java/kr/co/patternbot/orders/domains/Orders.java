@@ -1,7 +1,8 @@
-package kr.co.patternbot.order.domains;
+package kr.co.patternbot.orders.domains;
 
 
 import com.sun.istack.NotNull;
+import kr.co.patternbot.coin.domains.Coin;
 import kr.co.patternbot.user.domains.User;
 import lombok.*;
 
@@ -15,10 +16,10 @@ import javax.persistence.*;
 @Setter
 @Entity
 @Table(name = "orders")
-public class Order {
+public class Orders {
     @Id
-    @Column(name = "orderid")
-    @GeneratedValue private long orderid;
+    @Column(name = "ordersid")
+    @GeneratedValue private long ordersid;
     @Column private @NotNull String buyDate;
     @Column private @NotNull String sellDate;
     @Column private @NotNull String coinName;
@@ -30,6 +31,8 @@ public class Order {
     @Column private @NotNull String orderState;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "username")
+    @JoinColumn(name = "userid")
+    @JoinColumn(name = "coinid")
     private User user;
+    private Coin coin;
 }
