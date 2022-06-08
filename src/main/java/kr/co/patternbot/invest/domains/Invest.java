@@ -20,14 +20,15 @@ public class Invest {
     @Id @Column(name = "investid")
     @GeneratedValue private long investid;
     @Column private @NotNull String buyDate;
-    @Column private @NotNull String coinName;
     @Column private @NotNull String unitPrice;
     @Column private @NotNull String amount;
     @Column private @NotNull String marketPrice;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "userid")
-    @JoinColumn(name = "coinid")
     private User user;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "coinid")
     private Coin coin;
 }

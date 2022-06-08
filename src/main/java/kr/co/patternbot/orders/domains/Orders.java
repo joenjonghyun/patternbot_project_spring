@@ -22,17 +22,17 @@ public class Orders {
     @GeneratedValue private long ordersid;
     @Column private @NotNull String buyDate;
     @Column private @NotNull String sellDate;
-    @Column private @NotNull String coinName;
     @Column private @NotNull String unitPrice;
     @Column private @NotNull String amount;
     @Column private @NotNull String buyPrice;
-    @Column private @NotNull String sellPrice;
     @Column private @NotNull String marketPrice;
     @Column private @NotNull String orderState;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "userid")
-    @JoinColumn(name = "coinid")
     private User user;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "coinid")
     private Coin coin;
 }
