@@ -6,6 +6,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class InvestServiceImpl {
+public class InvestServiceImpl implements InvestService{
     private final InvestRepository repository;
 }

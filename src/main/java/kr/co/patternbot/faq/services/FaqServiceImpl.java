@@ -6,6 +6,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class FaqServiceImpl {
+public class FaqServiceImpl implements FaqService{
     private final FaqRepository repository;
 }

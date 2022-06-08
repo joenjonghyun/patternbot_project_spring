@@ -6,6 +6,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class OrdersServiceImpl {
+public class OrdersServiceImpl implements OrdersService{
     private final OrdersRepository repository;
 }

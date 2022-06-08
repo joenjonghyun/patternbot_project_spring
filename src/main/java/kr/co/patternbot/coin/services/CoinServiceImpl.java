@@ -6,6 +6,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class CoinServiceImpl {
+public class CoinServiceImpl implements CoinService{
     private final CoinRepository repository;
 }
