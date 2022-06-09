@@ -1,8 +1,10 @@
 package kr.co.patternbot.coin.domains;
 
 import com.sun.istack.NotNull;
-import kr.co.patternbot.invest.domains.Invest;
-import kr.co.patternbot.user.domains.User;
+
+import kr.co.patternbot.orders.domains.Orders;
+import kr.co.patternbot.setting.domains.Setting;
+
 import lombok.*;
 
 import javax.persistence.*;
@@ -31,9 +33,11 @@ public class Coin {
     @Column private @NotNull String candleAccTradePrice;
     @Column private @NotNull String candleAccTradeVolume;
     @Column private @NotNull String prevClosingPrice;
-    @Column private @NotNull String changePrice;
-    @Column private @NotNull String changeRate;
+    @Column private @NotNull String unit;
 
     @OneToMany(mappedBy = "coin")
-    List<Invest> a = new ArrayList<>();
+    List<Setting> settings = new ArrayList<>();
+
+    @OneToMany(mappedBy = "coin")
+    List<Orders> orders = new ArrayList<>();
 }

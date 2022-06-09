@@ -1,6 +1,5 @@
-package kr.co.patternbot.trade.domains;
+package kr.co.patternbot.setting.domains;
 
-import com.sun.istack.NotNull;
 import kr.co.patternbot.coin.domains.Coin;
 import kr.co.patternbot.user.domains.User;
 import lombok.*;
@@ -14,11 +13,11 @@ import javax.persistence.*;
 @ToString
 @Setter
 @Entity
-@Table(name = "trades")
-public class Trade {
+@Table(name = "settings")
+public class Setting {
     @Id
-    @Column(name = "tradeid")
-    @GeneratedValue private long tradeid;
+    @Column(name = "settingid")
+    @GeneratedValue private long settingid;
     @Column private String amount;
     @Column private String profitRatio;
     @Column private String lossRatio;

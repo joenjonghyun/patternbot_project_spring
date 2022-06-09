@@ -20,12 +20,11 @@ public class Orders {
     @Id
     @Column(name = "ordersid")
     @GeneratedValue private long ordersid;
-    @Column private @NotNull String buyDate;
-    @Column private @NotNull String sellDate;
-    @Column private @NotNull String unitPrice;
-    @Column private @NotNull String amount;
-    @Column private @NotNull String buyPrice;
-    @Column private @NotNull String marketPrice;
+    @Column private @NotNull String tradeDateUtc;
+    @Column private @NotNull String tradeTimeUtc;
+    @Column private @NotNull String tradePrice;
+    @Column private @NotNull String tradeVolume;
+    @Column private @NotNull String askBid;
     @Column private @NotNull String orderState;
 
     @ManyToOne(fetch = FetchType.LAZY)
