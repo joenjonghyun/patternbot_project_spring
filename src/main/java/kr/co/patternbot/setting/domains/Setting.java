@@ -5,6 +5,7 @@ import kr.co.patternbot.user.domains.User;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Builder
 @Getter
@@ -18,7 +19,7 @@ public class Setting {
     @Id
     @Column(name = "settingid")
     @GeneratedValue private long settingid;
-    @Column private String amount;
+    @Column private @NotNull String amount;
     @Column private String profitRatio;
     @Column private String lossRatio;
 
