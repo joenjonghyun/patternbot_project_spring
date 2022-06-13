@@ -22,6 +22,7 @@ public class Orders {
     @GeneratedValue private long ordersid; //오더id
     @Column private @NotNull String tradeDateUtc; //체결일자
     @Column private @NotNull String tradeTimeUtc; //체결시각
+    @Column private @NotNull String timeStamp; //타임스탬프
     @Column private @NotNull String tradePrice; //체결가격
     @Column private @NotNull String tradeVolume; //체결량
     @Column private @NotNull String askBid; //매도/매수
