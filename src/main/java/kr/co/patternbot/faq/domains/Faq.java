@@ -15,7 +15,7 @@ import javax.persistence.*;
 @Table(name = "faqs")
 public class Faq {
     @Id @Column(name = "faqid")
-    @GeneratedValue private long faqid;
-    @Column private @NotNull String question;
-    @Column private @NotNull String answer;
+    @GeneratedValue private long faqid; //FAQ ID
+    @Column private @NotNull String question; //질문
+    @Column private @NotNull String answer; //답
 }

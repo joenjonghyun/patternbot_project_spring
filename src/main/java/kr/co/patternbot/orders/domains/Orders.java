@@ -19,13 +19,13 @@ import javax.persistence.*;
 public class Orders {
     @Id
     @Column(name = "ordersid")
-    @GeneratedValue private long ordersid;
-    @Column private @NotNull String tradeDateUtc;
-    @Column private @NotNull String tradeTimeUtc;
-    @Column private @NotNull String tradePrice;
-    @Column private @NotNull String tradeVolume;
-    @Column private @NotNull String askBid;
-    @Column private @NotNull String orderState;
+    @GeneratedValue private long ordersid; //오더id
+    @Column private @NotNull String tradeDateUtc; //체결일자
+    @Column private @NotNull String tradeTimeUtc; //체결시각
+    @Column private @NotNull String tradePrice; //체결가격
+    @Column private @NotNull String tradeVolume; //체결량
+    @Column private @NotNull String askBid; //매도/매수
+    @Column private @NotNull String orderState; //주문상태
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "userid")

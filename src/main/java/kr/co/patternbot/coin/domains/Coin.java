@@ -21,19 +21,19 @@ import java.util.List;
 @Table(name = "coins")
 public class Coin {
     @Id @Column(name = "coinid")
-    @GeneratedValue private long coinid;
-    @Column private @NotNull String market;
-    @Column private @NotNull String candleDateTimeUtc;
-    @Column private @NotNull String candleDateTimeKst;
-    @Column private @NotNull String openingPrice;
-    @Column private @NotNull String highPrice;
-    @Column private @NotNull String lowPrice;
-    @Column private @NotNull String tradePrice;
-    @Column private @NotNull String timestamp;
-    @Column private @NotNull String candleAccTradePrice;
-    @Column private @NotNull String candleAccTradeVolume;
-    @Column private @NotNull String prevClosingPrice;
-    @Column private @NotNull String unit;
+    @GeneratedValue private long coinid; //코인id
+    @Column private @NotNull String market; //코인이름
+    @Column private @NotNull String candleDateTimeUtc; //캔들날짜세계협정시간
+    @Column private @NotNull String candleDateTimeKst; //캔들날짜한국표준시간
+    @Column private @NotNull String openingPrice; //오픈가격
+    @Column private @NotNull String highPrice; //높은가격
+    @Column private @NotNull String lowPrice; //낮은가격
+    @Column private @NotNull String tradePrice; //거래가격(시세)
+    @Column private @NotNull String timestamp; //타임스탬프
+    @Column private @NotNull String candleAccTradePrice; //캔들어카운트거래가격
+    @Column private @NotNull String candleAccTradeVolume; //캔들어카운트거래량
+    @Column private @NotNull String prevClosingPrice; //전종가
+    @Column private @NotNull String unit; //분단위유닛
 
     @OneToMany(mappedBy = "coin")
     List<Setting> settings = new ArrayList<>();

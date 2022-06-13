@@ -21,11 +21,11 @@ import java.util.List;
 @Table(name = "users")
 public class User {
     @Id @Column(name = "userid")
-    @GeneratedValue private long userid;
-    @Column private @NotNull String username;
-    @Column private @NotNull String email;
-    @Column private @NotNull String password;
-    @Column(name = "reg_date") @NotNull private String regDate;
+    @GeneratedValue private long userid; //유저id
+    @Column private @NotNull String username; //사용자이름
+    @Column private @NotNull String email; // 이메일
+    @Column private @NotNull String password; //비밀번호
+    @Column(name = "reg_date") @NotNull private String regDate; //회원가입날짜
 
     @OneToMany(mappedBy = "user")
     List<Setting> settings = new ArrayList<>();

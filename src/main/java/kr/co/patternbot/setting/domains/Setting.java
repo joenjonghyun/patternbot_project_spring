@@ -18,10 +18,10 @@ import javax.validation.constraints.NotNull;
 public class Setting {
     @Id
     @Column(name = "settingid")
-    @GeneratedValue private long settingid;
-    @Column private @NotNull String amount;
-    @Column private String profitRatio;
-    @Column private String lossRatio;
+    @GeneratedValue private long settingid; //설정id
+    @Column private @NotNull String amount; //투자금액
+    @Column private String profitRatio; //목표이익률
+    @Column private String lossRatio; //손해률
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "userid")
