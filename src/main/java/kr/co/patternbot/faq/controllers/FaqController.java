@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/faq")
+@RequestMapping("/faqs")
 public class FaqController {
     private final FaqService service;
 }

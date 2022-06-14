@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/coin")
+@RequestMapping("/coins")
 public class CoinController {
     private final CoinService service;
 
