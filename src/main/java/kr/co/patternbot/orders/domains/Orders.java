@@ -2,8 +2,8 @@ package kr.co.patternbot.orders.domains;
 
 
 import com.sun.istack.NotNull;
-import kr.co.patternbot.coin.domains.Coin;
-import kr.co.patternbot.user.domains.User;
+import kr.co.patternbot.coins.domains.Coin;
+import kr.co.patternbot.users.domains.User;
 import lombok.*;
 
 import javax.persistence.*;

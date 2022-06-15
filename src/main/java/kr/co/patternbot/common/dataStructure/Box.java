@@ -1,6 +1,6 @@
 package kr.co.patternbot.common.dataStructure;
 
-import kr.co.patternbot.user.domains.User;
+import kr.co.patternbot.users.domains.User;
 import lombok.Data;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;

@@ -1,8 +1,8 @@
 package kr.co.patternbot.auth.service;
 
 import kr.co.patternbot.auth.domains.Auth;
-import kr.co.patternbot.user.domains.User;
-import kr.co.patternbot.user.repositories.UserRepository;
+import kr.co.patternbot.users.domains.User;
+import kr.co.patternbot.users.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
