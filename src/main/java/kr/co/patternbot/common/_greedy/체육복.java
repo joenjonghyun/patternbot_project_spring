@@ -21,6 +21,6 @@ package kr.co.patternbot.common._greedy;
  *  * 5    [2,4]     [3]         4
  *  * 3     [3]      [1]         2
  *  */
-
+//이거 내가 주말에 스스로 한번 더 풀기
 public class 체육복 {
 }
