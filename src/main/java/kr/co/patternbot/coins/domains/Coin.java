@@ -29,8 +29,8 @@ public class Coin {
     @Column private @NotNull String highPrice; //높은가격
     @Column private @NotNull String lowPrice; //낮은가격
     @Column private @NotNull String tradePrice; //거래가격(시세)
-    @Column private @NotNull String changePrice; //거래가격(시세)
-    @Column private @NotNull String changeRate; //변동률(시세)
+    @Column private @NotNull String changePrice; //변동가격
+    @Column private @NotNull String changeRate; //변동률
     @Column private @NotNull String timestamp; //타임스탬프
     @Column private @NotNull String candleAccTradePrice; //캔들어카운트거래가격
     @Column private @NotNull String candleAccTradeVolume; //캔들어카운트거래량
