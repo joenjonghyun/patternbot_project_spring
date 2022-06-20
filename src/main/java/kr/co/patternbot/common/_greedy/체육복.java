@@ -1,6 +1,14 @@
 package kr.co.patternbot.common._greedy;
 
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import org.junit.jupiter.api.Test;
+
+import java.util.Arrays;
+
 /**
  *  * 점심시간에 도둑이 들어, 일부 학생이 체육복을 도난당했습니다. 다행히 여벌 체육복이 있는 학생이 이들에게 체육복을 빌려주려 합니다.
  *  * 학생들의 번호는 체격 순으로 매겨져 있어, 바로 앞번호의 학생이나 바로 뒷번호의 학생에게만 체육복을 빌려줄 수 있습니다.
@@ -23,4 +31,56 @@ package kr.co.patternbot.common._greedy;
  *  */
 //이거 내가 주말에 스스로 한번 더 풀기
 public class 체육복 {
+    @Builder @Getter @AllArgsConstructor @NoArgsConstructor
+    public static class Solution{
+        private int n;
+        private int[] lost, reserve;
+        private int answer;
+
+
+        @Override public String toString(){return String.format("lost %s, reserve %s, answer %d", Arrays.toString(lost), Arrays.toString(reserve), answer);}
+    }
+    @FunctionalInterface private interface SolutionService{
+        Solution solution(Solution s);
+    }
+    public static class Service{
+
+        SolutionService f = e -> {
+            e.answer = e.n;
+            int[] student = new int[e.n];
+
+            Arrays.fill(student, 1);
+            for (int i : e.lost)
+                student[i-1] -= 1;
+            for (int i : e.reserve)
+                student[i-1] += 1;
+            for (int i = 0; i<student.length; i++){
+                if (student[i] == 0){
+                    if (i>0 && student[i -1] == 2)
+                        student[i -1] -= 1;
+                    else if (i< e.n - 1 && student[i +1]==2)
+                        student[i+1] -= 1;
+                    else e.answer--;
+                }
+            }
+            return Solution.builder()
+                    .answer(e.getAnswer())
+                    .reserve(e.getReserve())
+                    .lost(e.getLost())
+                    .build();
+        };
+        Solution test(Solution s) {return f.solution(s);}
+    }
+    @Test void testSolutionTest(){
+        int n = 5;
+        int[] lost = {2,4};
+        int[] reserve = {1,3,5};
+        Service s1 = new Service();
+        Solution s = Solution.builder()
+                .n(n)
+                .lost(lost)
+                .reserve(reserve)
+                .build();
+        System.out.println(s1.test(s));
+    }
 }

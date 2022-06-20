@@ -17,7 +17,8 @@ public enum Role implements GrantedAuthority {
     private final String description;
 
     public static Role of(String code) {
-        return Arrays.stream(Role.values()).filter(i -> i.getCode().equals(code))
+        return Arrays.stream(Role.values())
+                .filter(i -> i.getCode().equals(code))
                 .findAny().orElse(UNKNOWN_USER);
     }
 
