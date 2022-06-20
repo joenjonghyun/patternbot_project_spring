@@ -38,7 +38,7 @@ public class 체육복 {
         private int answer;
 
 
-        @Override public String toString(){return String.format("lost %s, reserve %s, answer %d", Arrays.toString(lost), Arrays.toString(reserve), answer);}
+        @Override public String toString(){return String.format("lost: %s, reserve: %s, answer: %d", Arrays.toString(lost), Arrays.toString(reserve), answer);}
     }
     @FunctionalInterface private interface SolutionService{
         Solution solution(Solution s);

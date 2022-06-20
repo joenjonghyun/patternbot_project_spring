@@ -17,7 +17,7 @@ public class 최대최소값 {
 
         @Override
         public String toString() {
-            return String.format("최소값: %d 최대값 %d",min,max);
+            return String.format("최소값: %d 최대값 : %d",min,max);
 
         }
     }
