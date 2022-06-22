@@ -51,7 +51,7 @@ public class 완주하지못한선수 {
     @Builder @Getter @AllArgsConstructor @NoArgsConstructor
 
     public static class Solution{
-        //속성
+        //속성ㅇㅇ
         private String[] participant, completion;
         private String answer;
 
@@ -66,6 +66,7 @@ public class 완주하지못한선수 {
 
     static class Service{
         SolutionsService f = e -> {
+            //기능
             e.answer = "";
             HashMap<String, Integer> hashMap = new HashMap<>();
             for (String player : e.participant) hashMap.put(player, hashMap.getOrDefault(player, 0)+1);
