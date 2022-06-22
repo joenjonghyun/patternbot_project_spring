@@ -25,7 +25,7 @@ public class User {
     @Column private @NotNull String username; //사용자이름
     @Column private @NotNull String email; // 이메일
     @Column private @NotNull String password; //비밀번호
-    @Column(name = "reg_date") @NotNull private String regDate; //회원가입날짜
+    @Column(name = "reg_date") private String regDate; //회원가입날짜
 
     @OneToMany(mappedBy = "user")
     List<Setting> settings = new ArrayList<>();
