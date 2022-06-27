@@ -22,7 +22,8 @@ import java.util.List;
 public class User {
     @Id @Column(name = "userid")
     @GeneratedValue private long userid; //유저id
-    @Column private @NotNull String username; //사용자이름
+    @Column private @NotNull String username; //유저네임
+    @Column private @NotNull String name; //이름
     @Column private @NotNull String email; // 이메일
     @Column private @NotNull String password; //비밀번호
     @Column(name = "reg_date") private String regDate; //회원가입날짜
