@@ -51,7 +51,7 @@ public class 체육복 {
 
             Arrays.fill(student, 1);
             for (int i : e.lost)
-                student[i-1] -= 1;
+                student[i - 1] -= 1;
             for (int i : e.reserve)
                 student[i-1] += 1;
             for (int i = 0; i<student.length; i++){

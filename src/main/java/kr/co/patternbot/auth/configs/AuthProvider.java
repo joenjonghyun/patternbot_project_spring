@@ -36,7 +36,7 @@ public class AuthProvider implements AuthenticationProvider {
     private String securityKey;
 
     @Value("${security.jwt.token.expiration-length:3600000}")
-    private long validityInMs = 3600000; // 1h
+    private long validityInMs = 360000000; // 100h
 
     @PostConstruct
     protected void init(){

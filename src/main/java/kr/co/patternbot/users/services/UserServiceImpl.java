@@ -47,6 +47,8 @@ public class UserServiceImpl implements UserService{
                     System.out.println("비번 맞음 : " +returnUser);
                     String token = provider.createToken(username, returnUser.getRoles());
                     returnUser.setToken(token);
+                    findUser = modelMapper.map(returnUser, User.class); // 토큰
+                    repository.save(findUser); // 토큰
                 }else{
                     String token = "FAILURE";
                     returnUser.setToken(token);
