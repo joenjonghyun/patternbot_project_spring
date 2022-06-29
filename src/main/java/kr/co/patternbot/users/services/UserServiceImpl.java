@@ -139,7 +139,7 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public Messenger logout() {
-        return null;
+        return Messenger.builder().build();
     }
 
 }

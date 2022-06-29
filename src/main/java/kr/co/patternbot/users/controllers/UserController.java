@@ -4,6 +4,7 @@ import io.swagger.annotations.*;
 import kr.co.patternbot.auth.domains.Messenger;
 import kr.co.patternbot.users.domains.User;
 import kr.co.patternbot.users.domains.UserDTO;
+import kr.co.patternbot.users.repositories.UserRepository;
 import kr.co.patternbot.users.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
@@ -25,8 +26,10 @@ public class UserController {
 
     private final UserService service;
     private final ModelMapper modelMapper;
+    private final UserRepository repository;
+
     @PostMapping("/login")
-    @ApiOperation(value ="${UserController.login")
+    @ApiOperation(value ="${UserController.login}")
     @ApiResponses(value = {
             @ApiResponse(code = 400, message = "Something Wrong"),
             @ApiResponse(code = 422, message = "유효하지 않은 아이디 / 비밀번호")
