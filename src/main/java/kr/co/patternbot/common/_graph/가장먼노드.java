@@ -7,6 +7,9 @@ import lombok.NoArgsConstructor;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Queue;
 
 /**
  * packageName    : kr.co.patternbot.common._graph
@@ -40,11 +43,11 @@ public class 가장먼노드 {
     @Builder @Getter @AllArgsConstructor @NoArgsConstructor
     public static class Solution{
         private int n;
-        private int[][] vertex;
+        private int[][] edge;
         private int answer;
 
         @Override public String toString(){
-            return String.format("");
+            return String.format("n: %d \nedge: %s \nanswer:%d", n, Arrays.deepToString(edge),answer);
         }
     }
     @FunctionalInterface public interface SolutionService{
@@ -53,25 +56,57 @@ public class 가장먼노드 {
 
     public static class Service{
         SolutionService f = e -> {
-            //e.answer = e.n;
+            e.answer = 0;
             ArrayList<ArrayList<Integer>> graph = new ArrayList<>();
-            /**
-             * int[] distance = new int[e.n+1];
-             * int [][] vertex = new int[[]];
-             */
-
-
-            for (int i = 0; i< e.n + 1; i++)
+            int[] distance = new int[e.n+1];
+            //System.out.println("0 :" + e.n);
+            for (int i = 0; i < e.n+1; i++)
                 graph.add(new ArrayList<>());
-            return Solution.builder().build();
+            for (int i = 0; i < e.edge.length; i++){
+                graph.get(e.edge[i][0]).add(e.edge[i][1]);
+                graph.get(e.edge[i][1]).add(e.edge[i][0]);
+            }
+            boolean[] visited = new boolean[e.n+1];
+            visited[1] = true;
+            Queue<Integer> bfs = new LinkedList<>();
+            bfs.add(1);
+            while (bfs.size() != 0) {
+                int nowNode = bfs.poll();
+                ArrayList<Integer> node = graph.get(nowNode);
+                //System.out.println("1 : "+ node.size());
+                for (Integer integer : node) {
+                    if (!visited[integer]) {
+                        bfs.add(integer);
+                        visited[integer] = true;
+                        distance[integer] = distance[nowNode] + 1;
+                    }
+                }
+            }
+            Arrays.sort(distance);
+            int max = distance[distance.length -1];
+            //System.out.println("2 : "+ distance.length);
+            for (int i = distance.length-1; distance[i] == max; i--)
+                e.answer++;
+            return Solution.builder()
+                    .n(e.getN())
+                    .edge(e.getEdge())
+                    .answer(e.getAnswer())
+                    .build();
         };
         Solution test(Solution s){
             return f.solution(s);
         }
     }
     @Test void testSolutionTest(){
+        int n = 6;
+        int[][] edge = {{3, 6}, {4, 3}, {3, 2}, {1, 3}, {1, 2}, {2, 4}, {5, 2}};
+        int answer = 0;
         Service service = new Service();
-        Solution solution = Solution.builder().build();
+        Solution solution = Solution.builder()
+                .n(n)
+                .edge(edge)
+                .answer(answer)
+                .build();
         System.out.println(service.test(solution));
     }
 }
