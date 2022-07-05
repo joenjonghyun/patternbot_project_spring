@@ -14,6 +14,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 import java.util.Optional;
 
@@ -42,10 +43,7 @@ public class UserController {
     public ResponseEntity<Messenger> logout() {
         return ResponseEntity.ok(service.logout());
     }
-    @PutMapping("/update")
-    public ResponseEntity<Messenger> update(@RequestBody User user) {
-        return ResponseEntity.ok(service.update(user));
-    }
+
 
     // Embeded Methods
     @GetMapping("/findAll")
@@ -69,8 +67,13 @@ public class UserController {
     }
 
     @DeleteMapping("/delete")
-    public ResponseEntity<Messenger> delete(@RequestBody User user) {
+    public ResponseEntity<Messenger> delete(@RequestBody UserDTO user) {
         return ResponseEntity.ok(service.delete(user));
+    }
+
+    @DeleteMapping("/deleteAll")
+    public ResponseEntity<Messenger> deleteAll() {
+        return ResponseEntity.ok(service.deleteAll());
     }
 
 
@@ -86,14 +89,35 @@ public class UserController {
         return ResponseEntity.ok(service.save(user));
     }
 
-    @GetMapping("/findById/{userid}")
-    public ResponseEntity<Optional<User>> findById(@PathVariable String userid) {
-        return ResponseEntity.ok(service.findById(userid));
+    @GetMapping("/findById") //{userid}왜 없앴는지
+    public ResponseEntity<Optional<User>> findById(@PathVariable UserDTO userDTO) {
+        return ResponseEntity.ok(service.findById(userDTO));
     }
+
+    @PostMapping("/findUsername") @ResponseBody //뜻한번물어보고가자자
+   public ResponseEntity<String> findUsername(@RequestBody UserDTO user) {
+        return ResponseEntity.ok(service.findUsername(user).getUsername());
+    }
+    @GetMapping("findByUsername") @ResponseBody
+    public ResponseEntity<Optional<User>> findByUsername(@RequestBody String username) {
+        return ResponseEntity.ok(service.findByUsername(username));
+    }
+
 
     @GetMapping("/existsById/{userid}")
     public ResponseEntity<Messenger> existsById(@PathVariable String userid) {
         return ResponseEntity.ok(service.existsById(userid));
+    }
+    @PatchMapping(value = "/update") @ResponseBody
+    public ResponseEntity<Integer> partialUpdate(@RequestBody final UserDTO userDTO) {
+        return ResponseEntity.ok(service.partialUpdate(userDTO));
+    }
+
+    @PostMapping(value = "/findPw")
+    public void findPwPOST(@RequestBody UserDTO user, HttpServletResponse response) throws Exception{
+        System.out.println("아이디 : " + user.getUsername());
+        System.out.println("email : " + user.getEmail());
+        service.findPw(response, user);
     }
 
 

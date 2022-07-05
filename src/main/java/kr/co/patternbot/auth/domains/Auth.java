@@ -27,7 +27,7 @@ public class Auth implements UserDetails {
         List<GrantedAuthority> authorities = user.getRoles().stream()
                 .map(role -> new SimpleGrantedAuthority(role.getAuthority()))
                 .collect(Collectors.toList());
-        return new Auth(user.getUserid(), user.getUsername(), user.getPassword(), user.getEmail(), user.getRegDate(), authorities);
+        return new Auth(user.getUserid(), user.getUsername(), user.getPassword(), user.getName(), user.getEmail(), authorities);
     }
     private final Collection<? extends GrantedAuthority> authorities;
     @Override

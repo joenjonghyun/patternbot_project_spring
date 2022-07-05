@@ -1,6 +1,7 @@
 package kr.co.patternbot.users.domains;
 
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.sun.istack.NotNull;
 
 import kr.co.patternbot.orders.domains.Orders;
@@ -25,12 +26,17 @@ public class User {
     @Column private @NotNull String username; //유저네임
     @Column private @NotNull String email; // 이메일
     @Column private @NotNull String password; //비밀번호
+    @Column private @NotNull String birth; //생일
+    @Column private @NotNull String name; //이름
+    @Column private @NotNull String phone; //전화번호
     @Column private String token; //토큰
-    @Column(name = "reg_date") private String regDate; //회원가입날짜
+    //@Column(name = "reg_date") private String regDate; 회원가입날짜
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "user")
     List<Setting> settings = new ArrayList<>();
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "user")
     List<Orders> orders = new ArrayList<>();
 
