@@ -48,7 +48,7 @@ public class Box<K, V> {
         return ls;
     }
     //유저네임으로 검색된 회원 목록요청시 (필터가 필요없는 리액트로 던지는 경우)
-    public List<User> findByUserName(String name) {
+    public List<User> findByUsername(String name) {
         List<User> ls = new ArrayList<>();
         for (User v : ls) {if (name.equals(v.getUsername())) {ls.add(v);}}
         return ls;

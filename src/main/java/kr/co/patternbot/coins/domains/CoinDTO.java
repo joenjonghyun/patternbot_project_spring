@@ -21,15 +21,15 @@ public class CoinDTO {
     @ApiModelProperty(position = 2) String market;
     @ApiModelProperty(position = 3) String candleDateTimeUtc;
     @ApiModelProperty(position = 4) String candleDateTimeKst;
-    @ApiModelProperty(position = 5) String openingPrice;
-    @ApiModelProperty(position = 6) String highPrice;
-    @ApiModelProperty(position = 7) String lowPrice;
-    @ApiModelProperty(position = 8) String tradePrice;
+    @ApiModelProperty(position = 5) Double openingPrice;
+    @ApiModelProperty(position = 6) Double highPrice;
+    @ApiModelProperty(position = 7) Double lowPrice;
+    @ApiModelProperty(position = 8) Double tradePrice;
     @ApiModelProperty(position = 9) String changePrice;
     @ApiModelProperty(position = 10) String changeRate;
-    @ApiModelProperty(position = 11) String timestamp;
-    @ApiModelProperty(position = 12) String candleAccTradePrice;
-    @ApiModelProperty(position = 13) String candleAccTradeVolume;
+    @ApiModelProperty(position = 11) Long timestamp;
+    @ApiModelProperty(position = 12) Double candleAccTradePrice;
+    @ApiModelProperty(position = 13) Double candleAccTradeVolume;
     @ApiModelProperty(position = 14) String prevClosingPrice;
-    @ApiModelProperty(position = 15) String unit;
+    @ApiModelProperty(position = 15) Integer unit;
 }

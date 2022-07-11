@@ -29,6 +29,7 @@ public class CoinServiceImpl implements CoinService{
 
     @Override
     public List<Coin> findAll(Sort sort) {
+
         return repository.findAll();
     }
 

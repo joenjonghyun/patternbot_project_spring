@@ -21,7 +21,7 @@ import java.util.Optional;
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @Api(tags = "users") //외부에서 users가 있는 단어만 출입시킴
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/users") //루트경로
 @RequiredArgsConstructor
 public class UserController {
 
