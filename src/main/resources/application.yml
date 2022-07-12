@@ -4,7 +4,6 @@ spring:
     url: jdbc:mariadb://localhost:3306/patternbotdb?characterEncoding=UTF-8&serverTimezone=UTC
     username: root
     password: root
-
   jpa:
     hibernate:
       ddl-auto: update

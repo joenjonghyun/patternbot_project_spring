@@ -27,7 +27,7 @@ public class OrdersController {
 
     // Embeded Methods
     @GetMapping("/findAll")
-    public ResponseEntity<List<Orders>> findAll() {
+    public ResponseEntity<ResponseEntity<List<Orders>>> findAll() {
         return ResponseEntity.ok(service.findAll());
     }
 

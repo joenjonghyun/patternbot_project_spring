@@ -6,12 +6,13 @@ import kr.co.patternbot.orders.domains.OrdersDTO;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface OrdersService {
-    List<Orders> findAll();
+    ResponseEntity<List<Orders>> findAll();
 
     List<Orders> findAll(Sort sort);
 

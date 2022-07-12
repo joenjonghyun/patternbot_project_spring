@@ -22,6 +22,7 @@ import static kr.co.patternbot.common.lambda.Lambda.string;
 @RequiredArgsConstructor
 public class CoinServiceImpl implements CoinService{
     private final CoinRepository repository;
+
     @Override
     public List<Coin> findAll() {
         return repository.findAll();
@@ -72,7 +73,6 @@ public class CoinServiceImpl implements CoinService{
                 ? Messenger.builder().message("EXIST").build()
                 : Messenger.builder().message("NOT_EXIST").build(); // coinid 타입이 다름
     }
-
 
 
     @Override

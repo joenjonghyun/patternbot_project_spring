@@ -80,7 +80,7 @@ public class 전화번호목록 {
     }
     @Test void testSolutionTest(){
         String[] phone_book = {"119", "97674223", "1195524421"};
-        boolean answer = true;
+        boolean answer = false;
         Service service = new Service();
         Solution solution = Solution.builder()
                 .phone_book(phone_book)
