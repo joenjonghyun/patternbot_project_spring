@@ -32,5 +32,6 @@ public interface OrdersService {
 
     // custom
 
-    List<Orders> findByOrdersName(String name);
+    List<Orders> findByOrdersname(String name);
+
 }

@@ -65,7 +65,9 @@ public class OrdersServiceImpl implements OrdersService{
     }
 
     @Override
-    public List<Orders> findByOrdersName(String name) {
+    public List<Orders> findByOrdersname(String name) {
         return null;
     }
+
+
 }

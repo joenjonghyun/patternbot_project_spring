@@ -16,11 +16,14 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/orders")
 public class OrdersController {
     private final OrdersService service;
+
+    @GetMapping("/update")
     public ResponseEntity<Messenger> update(@RequestBody Orders orders) {
         return ResponseEntity.ok(service.update(orders));
     }
@@ -64,4 +67,5 @@ public class OrdersController {
     public ResponseEntity<Messenger> existsById(@PathVariable String ordersid) {
         return ResponseEntity.ok(service.existsById(ordersid));
     }
+
 }
