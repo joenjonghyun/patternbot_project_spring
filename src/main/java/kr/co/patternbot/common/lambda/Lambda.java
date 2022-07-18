@@ -77,4 +77,23 @@ public class Lambda {
         Supplier<String> f = () -> string(LocalDate.now());
         return f.get();
     }
+    public static int Atm(){
+        //BiFunction<Integer, Integer, Double> s = Math::random;
+        Supplier<Double> s = Math::random;
+        return (int)(s.get()*1001)+1;
+    }
+    public static int lotto(){
+        //BiFunction<Integer, Integer, Double> s = Math::random;
+        Supplier<Double> s = Math::random;
+        return (int)(s.get()*45)+1;
+    }
+    public static int countStar(){
+        //BiFunction<Integer, Integer, Double> s = Math::random;
+        Supplier<Double> s = Math::random;
+        return (int)(s.get()*50);
+    }
+    public static String choi(Integer i){
+        Function<Integer, String> f = String::valueOf;
+        return f.apply(i);
+    }
 }

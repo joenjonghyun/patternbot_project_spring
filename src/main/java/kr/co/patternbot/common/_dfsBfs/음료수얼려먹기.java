@@ -1,8 +1,8 @@
-package kr.co.patternbot.common._dynamic;
+package kr.co.patternbot.common._dfsBfs;
 
 /**
- * packageName    : kr.co.patternbot.common._dynamic
- * fileName       : 개미전사
+ * packageName    : kr.co.patternbot.common._dfsBfs
+ * fileName       : 음료수얼려먹기
  * author         : j2022
  * date           : 2022-07-08
  * description    :
@@ -11,9 +11,9 @@ package kr.co.patternbot.common._dynamic;
  * -----------------------------------------------------------
  * 2022-07-08        j2022       최초 생성
  */
-public class 개미전사 {
+public class 음료수얼려먹기 {
 
-    //    @Builder @Getter @AllArgsConstructor @NoArgsConstructor
+//    @Builder @Getter @AllArgsConstructor @NoArgsConstructor
 //    public static class Solution{
 //
 //

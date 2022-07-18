@@ -6,7 +6,7 @@ spring:
     password: patternbot
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     properties:
       hibernate:
         format_sql: true #To beautify or pretty print the SQL
