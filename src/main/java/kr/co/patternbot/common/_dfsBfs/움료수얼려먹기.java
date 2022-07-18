@@ -2,7 +2,7 @@ package kr.co.patternbot.common._dfsBfs;
 
 /**
  * packageName    : kr.co.patternbot.common._dfsBfs
- * fileName       : 음료수얼려먹기
+ * fileName       : 움료수얼려먹기
  * author         : j2022
  * date           : 2022-07-08
  * description    :
@@ -11,7 +11,7 @@ package kr.co.patternbot.common._dfsBfs;
  * -----------------------------------------------------------
  * 2022-07-08        j2022       최초 생성
  */
-public class 음료수얼려먹기 {
+public class 움료수얼려먹기 {
 
 //    @Builder @Getter @AllArgsConstructor @NoArgsConstructor
 //    public static class Solution{
