@@ -33,7 +33,7 @@ public class K번째수 {
         Solution solution(Solution s);
     }
 
-    class Service {
+    static class Service {
         Solution test(Solution s){
             SolutionService f = e -> {
                 return null;

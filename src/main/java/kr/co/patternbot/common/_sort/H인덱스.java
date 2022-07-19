@@ -38,7 +38,7 @@ public class H인덱스 {
         Solution solution (Solution s);
     }
 
-    class Service{
+    static class Service{
         SolutionService f = e ->{
             Arrays.sort(e.citations);
 
