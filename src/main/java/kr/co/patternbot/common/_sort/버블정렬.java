@@ -38,7 +38,7 @@ public class 버블정렬 {
         Solution solutionServiceApply(Solution solutionParam);
     }
 
-    class Service {
+    static class Service {
         SolutionService f = e -> {
             for (int i = 0; i < e.array.length; i++) {
                 for (int j = 0; j < 9-i; j++) {

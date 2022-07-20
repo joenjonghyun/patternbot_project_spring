@@ -36,7 +36,7 @@ public class 삽입정렬 {
         Solution solution(Solution s);
     }
 
-    class Service{
+    static class Service{
         SolutionService f = e ->{
             for(int i = 1; i<e.arr.length;i++){
                 int target = e.arr[i];
