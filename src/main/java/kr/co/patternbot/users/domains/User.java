@@ -23,12 +23,12 @@ import java.util.List;
 public class User {
     @Id @Column(name = "userid")
     @GeneratedValue private long userid; //유저id
-    @Column private @NotNull String username; //유저네임
-    @Column private @NotNull String email; // 이메일
-    @Column private @NotNull String password; //비밀번호
-    @Column private @NotNull String birth; //생일
-    @Column private @NotNull String name; //이름
-    @Column private @NotNull String phone; //전화번호
+    @Column private  String username; //유저네임
+    @Column private  String email; // 이메일
+    @Column private String password; //비밀번호
+    @Column private  String birth; //생일
+    @Column private  String name; //이름
+    @Column private  String phone; //전화번호
     @Column private String token; //토큰
     //@Column(name = "reg_date") private String regDate; 회원가입날짜
 
