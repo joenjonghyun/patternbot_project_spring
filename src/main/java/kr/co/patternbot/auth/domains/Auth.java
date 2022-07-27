@@ -18,16 +18,17 @@ public class Auth implements UserDetails {
     //상수로 처리 <-> User는 변수로 처리
     private final long userid;
     private final String username;
+    private final String name;
     @JsonIgnore
     private final String password;
-    private final String name;
     private final String email;
+    private final String mobile;
 
     public static Auth build(User user) {
         List<GrantedAuthority> authorities = user.getRoles().stream()
                 .map(role -> new SimpleGrantedAuthority(role.getAuthority()))
                 .collect(Collectors.toList());
-        return new Auth(user.getUserid(), user.getUsername(), user.getPassword(), user.getName(), user.getEmail(), authorities);
+        return new Auth(user.getUserid(), user.getUsername(),user.getMobile(), user.getPassword(), user.getName(), user.getEmail(), authorities);
     }
     private final Collection<? extends GrantedAuthority> authorities;
     @Override

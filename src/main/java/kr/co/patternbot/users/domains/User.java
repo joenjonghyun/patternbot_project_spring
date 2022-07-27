@@ -28,7 +28,7 @@ public class User {
     @Column private String password; //비밀번호
     @Column private  String birth; //생일
     @Column private  String name; //이름
-    @Column private  String phone; //전화번호
+    @Column private  String mobile; //전화번호
     @Column private String token; //토큰
     //@Column(name = "reg_date") private String regDate; 회원가입날짜
 
