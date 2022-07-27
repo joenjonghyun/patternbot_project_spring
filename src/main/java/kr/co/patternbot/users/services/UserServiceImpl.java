@@ -260,7 +260,7 @@ public class UserServiceImpl implements UserService{
         if (StringUtils.isNotBlank(userDTO.getName())) user.setName(userDTO.getName());
         if(StringUtils.isNotBlank(userDTO.getName())) user.setName(userDTO.getName());
         if(StringUtils.isNotBlank(userDTO.getBirth())) user.setBirth(userDTO.getBirth());
-        if(StringUtils.isNotBlank(userDTO.getPhone())) user.setPhone(userDTO.getPhone());
+        if(StringUtils.isNotBlank(userDTO.getMobile())) user.setMobile(userDTO.getMobile());
         if(StringUtils.isNotBlank(userDTO.getEmail())) user.setEmail(userDTO.getEmail());
         if(StringUtils.isNotBlank(userDTO.getPassword())) user.setPassword(userDTO.getPassword());
         if(StringUtils.isNotBlank(userDTO.getUsername())) user.setUsername(userDTO.getUsername());
