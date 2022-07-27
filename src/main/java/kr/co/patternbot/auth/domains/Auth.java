@@ -19,10 +19,11 @@ public class Auth implements UserDetails {
     private final long userid;
     private final String username;
     private final String name;
-    @JsonIgnore
-    private final String password;
     private final String email;
     private final String mobile;
+    @JsonIgnore
+    private final String password;
+
 
     public static Auth build(User user) {
         List<GrantedAuthority> authorities = user.getRoles().stream()
