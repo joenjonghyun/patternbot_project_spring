@@ -1,12 +1,12 @@
 spring:
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://192.168.0.28/patternbotdb?characterEncoding=UTF-8&serverTimezone=UTC
-    username: patternbot
-    password: patternbot
+    url: jdbc:mariadb://localhost:3306/patternbotdb?characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: root
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
     properties:
       hibernate:
         format_sql: true #To beautify or pretty print the SQL

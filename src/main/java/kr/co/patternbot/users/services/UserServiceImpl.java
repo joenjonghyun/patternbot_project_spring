@@ -172,7 +172,7 @@ public class UserServiceImpl implements UserService{
         return user;
     }
 
-    //비밀번호찾기 이메일발솔
+    //비밀번호찾기 이메일발송
     @Override
     public void sendEmail(UserDTO user, String div) throws Exception{
         //Mail Server 설정
