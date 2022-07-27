@@ -118,10 +118,10 @@ public class UserServiceImpl implements UserService{
             list.add(Role.USER);
             repository.save(User.builder()
                     .name(user.getName())
-                    .birth(user.getBirth())
+                    .mobile(user.getMobile())
                     .username(user.getUsername())
                     .email(user.getEmail())
-                    //.regDate(user.getRegDate())
+                    .regDate(user.getRegDate())
                     .password(encoder.encode(user.getPassword()))
                     .roles(list).build());
             result = "SUCCESS";
@@ -258,8 +258,7 @@ public class UserServiceImpl implements UserService{
         Optional<User> originUser = repository.findById(userDTO.getUserid());
         User user = originUser.get();
         if (StringUtils.isNotBlank(userDTO.getName())) user.setName(userDTO.getName());
-        if(StringUtils.isNotBlank(userDTO.getName())) user.setName(userDTO.getName());
-        if(StringUtils.isNotBlank(userDTO.getBirth())) user.setBirth(userDTO.getBirth());
+        if(StringUtils.isNotBlank(userDTO.getRegDate())) user.setRegDate(userDTO.getRegDate());
         if(StringUtils.isNotBlank(userDTO.getMobile())) user.setMobile(userDTO.getMobile());
         if(StringUtils.isNotBlank(userDTO.getEmail())) user.setEmail(userDTO.getEmail());
         if(StringUtils.isNotBlank(userDTO.getPassword())) user.setPassword(userDTO.getPassword());

@@ -21,6 +21,7 @@ public class Auth implements UserDetails {
     private final String name;
     private final String email;
     private final String mobile;
+    private final String regDate;
     @JsonIgnore
     private final String password;
 
@@ -29,7 +30,7 @@ public class Auth implements UserDetails {
         List<GrantedAuthority> authorities = user.getRoles().stream()
                 .map(role -> new SimpleGrantedAuthority(role.getAuthority()))
                 .collect(Collectors.toList());
-        return new Auth(user.getUserid(), user.getUsername(),user.getMobile(), user.getPassword(), user.getName(), user.getEmail(), authorities);
+        return new Auth(user.getUserid(), user.getUsername(),user.getMobile(), user.getPassword(), user.getRegDate(), user.getName(), user.getEmail(), authorities);
     }
     private final Collection<? extends GrantedAuthority> authorities;
     @Override
