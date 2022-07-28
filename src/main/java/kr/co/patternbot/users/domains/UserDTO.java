@@ -7,8 +7,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-//swagger 다운받아야함
-//@ToString 지우긴했는데 알아보자
 @Component @Data
 public class UserDTO {
     @ApiModelProperty(position = 1) private long userid;
